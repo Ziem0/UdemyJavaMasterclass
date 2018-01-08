@@ -1,7 +1,7 @@
 package VehicleChallange;
 
 /**
- * Created by dev on 8/3/15.
+ * Created by Ziemo on 8/1/17.
  */
 public class Vehicle {
     private String name;
