@@ -6,5 +6,7 @@ public class Main {
         Animal animal = new Animal("Animal", 1, 1, 5, 20);
         Dog dog = new Dog("Pinia", 2, 12, 2, 1, 4, 6, "oldLove");
         dog.eat();
+        dog.walk();
+        dog.run();
     }
 }

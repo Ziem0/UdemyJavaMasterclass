@@ -59,8 +59,8 @@ public class Animal {
         System.out.println("Animal.eat() called");
     }
 
-    public void move() {
-
+    public void move(int speed) {
+        System.out.println("The animal is moving at " + speed);
     }
 
 }
