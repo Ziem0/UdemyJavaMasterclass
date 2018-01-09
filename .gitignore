@@ -1,3 +1,5 @@
 .idea/inspectionProfiles/
 src/CompositionEncapsulationPolymorphism/
-src/run.sh
+src/Composition/run.sh
+src/VehicleChallange/run.sh
+src/Encapsulation/
