@@ -36,15 +36,15 @@ class Car {
     }
 
     public String startEngine() {
-        return "Engine is on";
+        return getClass().getSimpleName()+" Engine is on";
     }
 
     public String accelerate() {
-        return "Wruuum";
+        return getClass().getSimpleName()+" Wruuum";
     }
 
     public String brake() {
-        return "Brrr";
+        return getClass().getSimpleName()+" Brrr";
     }
 }
 
@@ -55,17 +55,17 @@ class Maluch extends Car {
 
     @Override
     public String startEngine() {
-        return getName()+" is on";
+        return super.startEngine();
     }
 
     @Override
     public String accelerate() {
-        return getName()+" Wruuum";
+        return super.accelerate();
     }
 
     @Override
     public String brake() {
-        return getName()+" Brrr";
+        return super.brake();
     }
 }
 
