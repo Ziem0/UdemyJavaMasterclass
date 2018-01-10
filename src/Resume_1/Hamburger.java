@@ -1,6 +1,5 @@
 package Resume_1;
 
-import Resume_1.Addition;
 
 import java.util.ArrayList;
 
@@ -10,12 +9,14 @@ public class Hamburger {
     private String breadRoll;
     private String meat;
     private ArrayList<Addition> additions = new ArrayList<Addition>();
+    private int maxAdditions;
 
-    public Hamburger(String name, double price, String breadRoll, String meat) {
+    public Hamburger(String name, double price, String breadRoll, String meat, int maxAdditions) {
         this.name = name;
         this.price = price;
         this.breadRoll = breadRoll;
         this.meat = meat;
+        this.maxAdditions = maxAdditions;
     }
 
     private void sumPrice() {
@@ -26,10 +27,22 @@ public class Hamburger {
         }
     }
 
+    private boolean checkAddsLimit() {
+        if (additions.size() == maxAdditions) {
+            System.out.println("You cannot add more addon. Limit is " + maxAdditions);
+            return false;
+        }
+        return true;
+    }
+
+
     public void addAddition(String name, double price) {
-        Addition addon = new Addition(name, price);
-        additions.add(addon);
-        sumPrice();
+        boolean process = checkAddsLimit();
+        if (process) {
+            Addition addon = new Addition(name, price);
+            additions.add(addon);
+            sumPrice();
+        }
     }
 
     public String toString() {

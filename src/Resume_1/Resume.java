@@ -29,10 +29,28 @@ public class Resume {
     // For the two additional classes this may require you to be looking at the base class for pricing and then
     // adding totals onto that.
 
+
     public static void main(String[] args) {
-        Hamburger hamburger = new Hamburger("standard", 3.20, "white", "chicken");
+        Hamburger hamburger = new Hamburger("standard", 3.20, "white", "chicken",4);
+        System.out.println("You're creating new burger\n");
         hamburger.addAddition("lettuce",0.12);
         hamburger.addAddition("carrot",0.60);
+        hamburger.addAddition("cheese",1.60);
+        hamburger.addAddition("salami",1.60);
+        hamburger.addAddition("onion",0.88);
         System.out.println(hamburger);
+
+        System.out.println("\n");
+
+        HealthyBurger healthyBurger = new HealthyBurger(3.30, "beef");
+        System.out.println("You're creating new burger\n");
+        healthyBurger.addAddition("cheese",0.32);
+        healthyBurger.addAddition("onion",0.32);
+        healthyBurger.addAddition("carrot",0.32);
+        healthyBurger.addAddition("chicken",0.32);
+        healthyBurger.addAddition("corns",0.32);
+        healthyBurger.addAddition("salami",0.32);
+        healthyBurger.addAddition("potato", 0.32);
+        System.out.println(healthyBurger);
     }
 }
