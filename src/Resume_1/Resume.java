@@ -13,7 +13,7 @@ public class Resume {
     // price so you need some way to track how many items got added and to calculate the price (for the base
     // burger and all the additions).
     // This burger has a base price and the additions are all seperately priced.
-    // Create a Hamburger class to deal with all the above.
+    // Create a Resume_1.Hamburger class to deal with all the above.
     // The constructor should only include the roll type, meat and price.
     // Also create two extra varieties of Hamburgers (classes) to cater for
     // a) Healthy burger (on a brown rye bread roll), plus two addition items can be added.
@@ -30,6 +30,9 @@ public class Resume {
     // adding totals onto that.
 
     public static void main(String[] args) {
-
+        Hamburger hamburger = new Hamburger("standard", 3.20, "white", "chicken");
+        hamburger.addAddition("lettuce",0.12);
+        hamburger.addAddition("carrot",0.60);
+        System.out.println(hamburger);
     }
 }
