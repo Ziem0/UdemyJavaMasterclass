@@ -1,7 +1,7 @@
 package Resume_1;
 
 public class HealthyBurger extends Hamburger {
-    public HealthyBurger(double price, String meat) {
-        super("healthy", price, "brown", meat, 6);
+    public HealthyBurger() {
+        super("healthy", 3.33, "brown", "beef", 6);
     }
 }

@@ -8,8 +8,8 @@ public class Hamburger {
     private double price;
     private String breadRoll;
     private String meat;
-    private ArrayList<Addition> additions = new ArrayList<Addition>();
     private int maxAdditions;
+    private ArrayList<Addition> additions = new ArrayList<Addition>();
 
     public Hamburger(String name, double price, String breadRoll, String meat, int maxAdditions) {
         this.name = name;
@@ -19,12 +19,8 @@ public class Hamburger {
         this.maxAdditions = maxAdditions;
     }
 
-    private void sumPrice() {
-        if (additions != null) {
-            for (Addition i : additions) {
-                this.price += i.getPrice();
-            }
-        }
+    private void sumPrice(Addition addon) {
+        this.price += additions.get(additions.indexOf(addon)).getPrice();
     }
 
     private boolean checkAddsLimit() {
@@ -35,13 +31,12 @@ public class Hamburger {
         return true;
     }
 
-
     public void addAddition(String name, double price) {
         boolean process = checkAddsLimit();
         if (process) {
             Addition addon = new Addition(name, price);
             additions.add(addon);
-            sumPrice();
+            sumPrice(addon);
         }
     }
 

@@ -1,5 +1,7 @@
 package Resume_1;
 
+import java.util.ArrayList;
+
 public class Resume {
     // The purpose of the application is to help a ficticious company called Bills Burgers to manage
     // their process of selling hamburgers.
@@ -31,26 +33,42 @@ public class Resume {
 
 
     public static void main(String[] args) {
-        Hamburger hamburger = new Hamburger("standard", 3.20, "white", "chicken",4);
+        ArrayList<Hamburger> order = new ArrayList<>();
+
+        Hamburger hamburger = new Hamburger("standard", 2.0, "white", "chicken", 4);
         System.out.println("You're creating new burger\n");
-        hamburger.addAddition("lettuce",0.12);
-        hamburger.addAddition("carrot",0.60);
-        hamburger.addAddition("cheese",1.60);
-        hamburger.addAddition("salami",1.60);
-        hamburger.addAddition("onion",0.88);
+        hamburger.addAddition("lettuce", 0.12);
+        hamburger.addAddition("carrot", 0.60);
+        hamburger.addAddition("cheese", 1.60);
+        hamburger.addAddition("salami", 1.60);
+        hamburger.addAddition("onion", 0.88);
         System.out.println(hamburger);
 
         System.out.println("\n");
 
-        HealthyBurger healthyBurger = new HealthyBurger(3.30, "beef");
+        HealthyBurger healthyBurger = new HealthyBurger();
         System.out.println("You're creating new burger\n");
-        healthyBurger.addAddition("cheese",0.32);
-        healthyBurger.addAddition("onion",0.32);
-        healthyBurger.addAddition("carrot",0.32);
-        healthyBurger.addAddition("chicken",0.32);
-        healthyBurger.addAddition("corns",0.32);
-        healthyBurger.addAddition("salami",0.32);
+        healthyBurger.addAddition("cheese", 0.32);
+        healthyBurger.addAddition("onion", 0.32);
+        healthyBurger.addAddition("carrot", 0.32);
+        healthyBurger.addAddition("chicken", 0.32);
+        healthyBurger.addAddition("corns", 0.32);
+        healthyBurger.addAddition("salami", 0.32);
         healthyBurger.addAddition("potato", 0.32);
         System.out.println(healthyBurger);
+
+        System.out.println("\n");
+
+        DeluxeBurger deluxeBurger = new DeluxeBurger();
+        System.out.println("You're creating new burger\n");
+        deluxeBurger.addAddition("onion", 0.32);
+        System.out.println(deluxeBurger);
+
+
+        //polymorphism - also we can use interface
+        order.add(hamburger);
+        order.add(healthyBurger);
+        order.add(deluxeBurger);
+
     }
 }
