@@ -1,6 +1,8 @@
 package Resume_1;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Resume {
     // The purpose of the application is to help a ficticious company called Bills Burgers to manage
