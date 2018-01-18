@@ -38,13 +38,13 @@ public class Main {
         while (!quit) {
             System.out.println("choose an option:\r");
             int choice = scanner.nextInt();
-            scanner.nextLine();
             switch (choice) {
                 case 0:
                     quit = true;
                     break;
                 case 1:
                     System.out.println("Enter a string: ");
+                    scanner.nextLine();
                     String stringInput = scanner.nextLine();
                     values.add(idx, stringInput);
                     idx++;
