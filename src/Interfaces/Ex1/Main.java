@@ -1,5 +1,8 @@
 package Interfaces.Ex1;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Main {
     // Create a simple interface that allows an object to be saved to some sort of storage medium.
     // The exact type of medium is not known to the interface (nor to the classes that implement it).
@@ -20,7 +23,61 @@ public class Main {
     // simulate getting values from a file – this allows you to type as many values as your class
     // requires, and returns an ArrayList.
 
-    public static void main(String[] args) {
 
+    public static ArrayList<String> readValues() {
+        ArrayList<String> values = new ArrayList<>();
+
+        Scanner scanner = new Scanner(System.in);
+        boolean quit = false;
+        int idx = 0;
+
+        System.out.println("Choose" +
+                "\n\t 1 ---> to enter a string" +
+                "\n\t 2 ---> to quit\n");
+
+        while (!quit) {
+            System.out.println("choose an option:\r");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+            switch (choice) {
+                case 0:
+                    quit = true;
+                    break;
+                case 1:
+                    System.out.println("Enter a string: ");
+                    String stringInput = scanner.nextLine();
+                    values.add(idx, stringInput);
+                    idx++;
+                    break;
+            }
+        }
+        return values;
+    }
+
+
+    public static void saveObject(ISaveable objectToSave) {
+        for (int i = 0; i < objectToSave.write().size(); i++) {
+            System.out.println("Saving "+ objectToSave.write().get(i) + " to storage");
+        }
+    }
+
+
+    public static void loadObject(ISaveable objectToLoad) {
+        ArrayList<String> values = readValues();
+        objectToLoad.read(values);
+
+    }
+
+    public static void main(String[] args) {
+        Player ziemo = new Player("Ziemo", 100, "Sword");
+        System.out.println(ziemo);
+        saveObject(ziemo);
+
+        ziemo.setWeapon("Fist");
+        System.out.println(ziemo);
+        saveObject(ziemo);
+
+        loadObject(ziemo);
+        System.out.println(ziemo);
     }
 }
