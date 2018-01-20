@@ -20,7 +20,9 @@ public class Main {
 //        }
 //
 //        btnPrint.setOnClickListener(new ClickListener());
-        btnPrint.setOnClickListener(new Button.OnClickListener() {
+
+
+        btnPrint.setOnClickListener(new Button.OnClickListener() {     // anonymous class
             @Override
             public void onClick(String title) {
                 System.out.println(title + " was clicked");
