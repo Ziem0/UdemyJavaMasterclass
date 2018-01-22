@@ -55,8 +55,5 @@ public class Main {
         for (Team team : teams) {
             System.out.println(team);
         }
-
     }
-
-
 }

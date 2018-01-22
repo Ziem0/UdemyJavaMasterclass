@@ -21,11 +21,11 @@ public class Team<T extends Player> implements Comparable<Team<T>> {
 
     public boolean addPlayer(T player) {
         if (members.contains(player)) {
-            System.out.println(player.getName() + " is already on this team!");
+            System.out.println(player.getName() + " is already on " + this.getName());
             return false;
         } else {
             members.add(player);
-            System.out.println(player.getName() + " picked for team!");
+            System.out.println(player.getName() + " picked for " + this.getName());
             return true;
         }
     }
