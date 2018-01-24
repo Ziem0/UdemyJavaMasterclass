@@ -24,7 +24,7 @@ public class Demo {
 
     //method with anonymous class with interface
     private Setup someMethod() {
-        Setup setup = new Setup() {     // might be just "new setup" if is attached to container
+        Setup setup = new Setup() {     // might be just "new setup" if it is attached to container
             @Override
             public void print() {
                 System.out.println("This is an anonymous class");
@@ -55,7 +55,7 @@ public class Demo {
 
     //method with inner local class
     private void forLocal() {
-        class Local extends Part {
+        class Local extends Part {                         //nie musi extends! - czego nie moze anonymous
             public Local(String name) {
                 super(name);
             }
