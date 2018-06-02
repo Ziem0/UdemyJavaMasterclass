@@ -46,7 +46,7 @@ public class Demo {
     }
 
     public static void main(String[] args) {
-        Demo demo = new Demo("demo");
+        Demo demo = new Demo("demkoJakNic");
         demo.create();
 
         for (Sub sub : demo.box) {
